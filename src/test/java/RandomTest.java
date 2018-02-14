@@ -41,9 +41,9 @@ public class RandomTest {
 
 		System.setProperty("webbrowser.gecko.browser", "C:\\FORMATION\\installeurs\\Selenium\\geckobrowser.exe");	
 		FirefoxOptions options = new FirefoxOptions().setProfile(new FirefoxProfile());
-		options.addPreference("browser.tab.remote.autostart", false);
-		options.addPreference("browser.tab.remote.autostart.1", false);
-		options.addPreference("browser.tab.remote.autostart.2", false);
+		options.addPreference("browser.tabs.remote.autostart", false);
+		options.addPreference("browser.tabs.remote.autostart.1", false);
+		options.addPreference("browser.tabs.remote.autostart.2", false);
 
 		browser = new FirefoxDriver(options);
 	}
