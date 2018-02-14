@@ -27,42 +27,42 @@ public class RandomTest {
 	
 	//Set Up du navigateur
 	String nav = System.getProperty("navigateur");
-	WebDriver driver = null;
+	WebDriver navigateur = null;
 	
 	//nav = "chrome";
 	
 	if(nav.equals("chrome")) {
-	    driver = new ChromeDriver();
+	    navigateur = new ChromeDriver();
 	}
 	
 	if(nav.equals("firefox")) {
 		//Sélection de firefox comme navigateur	
-		System.setProperty("webdriver.gecko.driver", "C:\\FORMATION\\installeurs\\Selenium\\geckodriver.exe");	
+		System.setProperty("webnavigateur.gecko.navigateur", "C:\\FORMATION\\installeurs\\Selenium\\geckonavigateur.exe");	
 		FirefoxOptions options = new FirefoxOptions().setProfile(new FirefoxProfile());
 		options.addPreference("browser.tab.remote.autostart", false);
 		options.addPreference("browser.tab.remote.autostart.1", false);
 		options.addPreference("browser.tab.remote.autostart.2", false);
-		driver = new FirefoxDriver(options);
+		navigateur = new FirefoxDriver(options);
 	}
 	
-	driver.get("http://localhost:8081/jpetstore");
-	driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+	navigateur.get("http://localhost:8081/jpetstore");
+	navigateur.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 		
 	//Step 1: Entrée dans le magasin
-	WebElement entree = driver.findElement(By.linkText("Enter the Store")); 	
+	WebElement entree = navigateur.findElement(By.linkText("Enter the Store")); 	
 	entree.click();
 	
 	//Step 2: Click sur l'animal variabilisé
-	WebElement animalButton = driver.findElement(By.xpath("//img[@src='../images/" + animal + "_icon.gif']")); 	
+	WebElement animalButton = navigateur.findElement(By.xpath("//img[@src='../images/" + animal + "_icon.gif']")); 	
 	animalButton.click();	
 	
 	//Step 3: vérification du titre de la page affichée
-	WebElement animalTitreWE = driver.findElement(By.xpath("//div[@id='Catalog']/h2"));	
+	WebElement animalTitreWE = navigateur.findElement(By.xpath("//div[@id='Catalog']/h2"));	
 	String animalTitre = animalTitreWE.getText();
 	assertEquals(animalBis, animalTitre);
 	
 	//Fermeture du navigateur
-	driver.close();
+	navigateur.close();
 	
 	//Ajout d'un commentaire inutile : Maintenance
 	
