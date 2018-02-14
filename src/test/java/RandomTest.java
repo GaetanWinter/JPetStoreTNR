@@ -66,6 +66,8 @@ public class RandomTest {
 	
 	//Ajout d'un commentaire inutile : Maintenance
 	
+	//Ajout d'un commentaire inutile : Master
+	
 	}
 
 }
