@@ -32,36 +32,45 @@ public class RandomTest {
 	//nav = "chrome";
 	
 	if(nav.equals("chrome")) {
+
 	    browser = new ChromeDriver();
 	}
 	
 	if(nav.equals("firefox")) {
 		//Sélection de firefox comme navigateur	
+
 		System.setProperty("webbrowser.gecko.browser", "C:\\FORMATION\\installeurs\\Selenium\\geckobrowser.exe");	
 		FirefoxOptions options = new FirefoxOptions().setProfile(new FirefoxProfile());
 		options.addPreference("browser.tab.remote.autostart", false);
 		options.addPreference("browser.tab.remote.autostart.1", false);
 		options.addPreference("browser.tab.remote.autostart.2", false);
+
 		browser = new FirefoxDriver(options);
 	}
 	
+
 	browser.get("http://localhost:8081/jpetstore");
 	browser.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+
 		
 	//Step 1: Entrée dans le magasin
+
 	WebElement entree = browser.findElement(By.linkText("Enter the Store")); 	
 	entree.click();
 	
 	//Step 2: Click sur l'animal variabilisé
+
 	WebElement animalButton = browser.findElement(By.xpath("//img[@src='../images/" + animal + "_icon.gif']")); 	
 	animalButton.click();	
 	
 	//Step 3: vérification du titre de la page affichée
+
 	WebElement animalTitreWE = browser.findElement(By.xpath("//div[@id='Catalog']/h2"));	
 	String animalTitre = animalTitreWE.getText();
 	assertEquals(animalBis, animalTitre);
 	
 	//Fermeture du navigateur
+
 	browser.close();
 	
 	
