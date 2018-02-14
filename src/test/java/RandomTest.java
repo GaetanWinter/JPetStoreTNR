@@ -64,6 +64,8 @@ public class RandomTest {
 	//Fermeture du navigateur
 	driver.quit();
 	
+	//Ajout d'un commentaire inutile : Master
+	
 	}
 
 }
