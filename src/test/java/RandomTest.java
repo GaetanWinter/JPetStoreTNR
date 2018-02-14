@@ -18,7 +18,7 @@ public class RandomTest {
 
 		
 	//Animal à variabiliser
-	String animal = "reptile";
+	String animal = "reptiles";
 	//Transformation de la variable précédente pour convenir à la casse
 	String animalBis = animal.substring(0, 1).toUpperCase()+animal.substring(1);
 	
