@@ -62,7 +62,7 @@ public class RandomTest {
 	assertEquals(animalBis, animalTitre);
 	
 	//Fermeture du navigateur
-	//driver.quit();
+	driver.close();
 	
 	
 	}
