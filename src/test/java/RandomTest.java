@@ -39,7 +39,7 @@ public class RandomTest {
 	if(nav.equals("firefox")) {
 		//Sélection de firefox comme navigateur	
 
-		System.setProperty("webbrowser.gecko.driver", "C:\\FORMATION\\installeurs\\Selenium\\geckodriver.exe");	
+		System.setProperty("webdriver.gecko.driver", "C:\\FORMATION\\installeurs\\Selenium\\geckodriver.exe");	
 		FirefoxOptions options = new FirefoxOptions().setProfile(new FirefoxProfile());
 		options.addPreference("browser.tabs.remote.autostart", false);
 		//options.addPreference("browser.tabs.remote.autostart.1", false);
