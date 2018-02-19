@@ -1,12 +1,6 @@
 pipeline {
     agent any 
     stages {
-    	stage('Launch_Slave') { 
-            steps {
-            	echo 'Lancement des esclaves sur lesquels effectués les jobs'
-                build 'JPetStoreLaunchSlave' 
-            }
-        }
         stage('Build') { 
             steps {
             	echo 'Build des sources JPetStore'
