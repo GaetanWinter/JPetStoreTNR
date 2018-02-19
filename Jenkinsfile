@@ -1,0 +1,32 @@
+pipeline {
+    agent any 
+    stages {
+    	stage('Launch_Slave') { 
+            steps {
+            	echo 'Lancement des esclaves sur lesquels effectués les jobs'
+                build 'JPetStoreLaunchSlave' 
+            }
+        }
+        stage('Build') { 
+            steps {
+            	echo 'Build des sources JPetStore'
+                build 'JPetStore_Build' 
+            }
+        }
+         stage('Deploy') { 
+            steps {
+                build job: 'JPetstore_Deploy'
+            }
+        }
+        stage('Qualimetrie') { 
+            steps {
+                build job: 'JPetStore_SonarQube', parameters: [string(name: 'Browser', value: 'chrome')]
+            }
+        }
+        stage('TNT') { 
+            steps {                
+                build job: 'JPetStore_Test'
+            }
+        }
+    }
+}
