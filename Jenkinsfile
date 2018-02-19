@@ -4,7 +4,7 @@ pipeline {
         stage('Build') { 
             steps {
             	echo 'Build des sources JPetStore'
-                build job 'JPetStore_Build' 
+                build job: 'JPetStore_Build' 
             }
         }
          stage('Deploy') { 
